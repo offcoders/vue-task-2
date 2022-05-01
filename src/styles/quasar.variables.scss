@@ -1,0 +1,47 @@
+// It's highly recommended to change the default colors
+// to match your app's branding.
+
+$primary   : #0C365A;
+$secondary : #01D167;
+
+$bars      : #EDF3FF;
+$dark      : #1D1D1D;
+
+$font1     : #222222;
+$font2     : #0C365A;
+$font3     : #325BAF;
+$font4     : #AAAAAA;
+$fontLight    : #FFFFFF;
+
+$tabbar    : #23CEFD;
+$negative  : #C10015;
+$info      : #31CCEC;
+$warning   : #F2C037;
+$lightbg   : #EDF3FF;
+
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../assets/fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('../assets/fonts/OpenSans/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../assets/fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$fontFamiyBold : 'OpenSans-Bold';
+$fontFamiySemiBold : 'OpenSans-SemiBold';
+$fontFamiyRegular : 'OpenSans-Regular';
+
+
+@import '~quasar-variables-styl'

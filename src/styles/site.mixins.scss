@@ -1,0 +1,6 @@
+@mixin justify-align-center {
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+}

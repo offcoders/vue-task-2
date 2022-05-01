@@ -1,0 +1,724 @@
+@import './quasar.variables.scss';
+@import './site.mixins.scss';
+@import '~quasar-styl';
+// @import '~quasar-addon-styl';
+
+body, html{
+    font-family: $fontFamiyRegular;
+    @media all and (max-width: 991px){
+        body,
+        .q-body--fullscreen-mixin, .q-body--prevent-scroll{
+            background: $primary;
+            position: static !important;
+        }
+    }
+}
+.f-14{
+    font-size: 14px;
+}
+.f-15{
+    font-size: 15px;
+}
+.f-16{
+    font-size: 16px;
+}
+button:active{
+    outline: none;
+}
+.main-container{
+    padding: 60px;
+    @media all and (max-width:991px){
+        padding: 0px;
+    }
+}
+.q-card-section{
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    @media all and (max-width:991px){
+        background: transparent;
+    }
+}
+.dark-text{
+    color: $font1 !important;
+}
+
+.credit-card{
+    background-color: $secondary;
+    padding: 27px;
+    border-radius: 10px;
+    &.credit-card__freeze{
+        opacity: 0.5;
+    }
+    @media all and (max-width:991px){
+        position: relative;
+        z-index: 1;
+        padding: 17px;
+    }
+    .credit-card__logo{
+        height: 24px;
+        width: 84px;
+        float: right;
+    }
+    .credit-card__body{
+        margin-top: 40px;
+        @media all and (max-width:991px){
+            margin-top: 20px;
+        }
+        h4{
+            margin: 0px;
+            font-size: 28px;
+            font-family: $fontFamiyBold;
+            color: $fontLight;
+            letter-spacing: 0.58px;
+            @media all and (max-width:991px){
+                font-size: 20px;
+            }
+        }
+        .credit-card__body__number {
+            font-size: 18px;
+            margin: 20px 0;
+            letter-spacing: 6px;
+            color: $fontLight;
+            font-family: $fontFamiyBold;
+            @media all and (max-width:991px){
+                font-size: 16px;
+                letter-spacing: 4px;
+                margin: 9px 0;
+            }
+        }
+        .credit-card__body__extra{
+            display: flex;
+            display: -webkit-flex;
+            div{
+                margin-right: 40px;
+                color: $fontLight;
+                font-family: $fontFamiyBold;
+                span{
+                    font-size: 22px;
+                    line-height: 0;
+                    position: relative;
+                    top: 6px;
+                    left: 5px;
+                }
+            }
+        }
+        .card_type{
+            display: flex;
+            justify-content: flex-end;
+            display: -webkit-flex;
+            -webkit-justify-content: flex-end;
+            margin: 15px 0;
+            @media all and (max-width:991px){
+                margin: 10px 0 0 0;
+            }
+            .q-img{
+                max-width: 100px;
+                @media all and (max-width:991px){
+                    max-width: 62px;
+                }
+            }
+        }
+    }
+}
+
+.q-drawer{
+    @media all and (max-width:991px){
+        position: fixed;
+        z-index: 9;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: initial;
+        height: 60px;
+        width: 100% !important;
+    }
+    .q-drawer__content{
+        @media all and (max-width:991px){
+            padding: 0px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 0 20px rgb(0 0 0 / 30%);
+            display: flex;
+            display: -webkit-flex;
+            @include justify-align-center;
+        }
+    }
+}
+
+.app-sidebar{
+    background-color: $primary;
+    padding: 40px;
+    .app-sidebar__img{
+        width: 125px;
+        height: 35px;
+        @media all and (max-width:991px){
+            display: none;
+        }
+    };
+    .q-item__label--header{
+        @media all and (max-width:991px){
+            display: none;
+        }       
+    }
+    .app-sidebar__item{
+        color: $fontLight;
+        img{
+            width: 24px;
+            height: 24px;
+        }
+    };
+    .app-sidebar__q-list{
+        margin-top: 60px;
+        @media all and (max-width:991px){
+            margin-top: 0px;
+            display: flex;
+            display: -webkit-flex;
+            justify-content:space-around;
+            -webkit-justify-content: space-around;
+            align-items: center;
+            -webkit-align-items: center;
+            width: 100%;
+        }
+        a{
+            text-decoration: none;
+            &.active{
+                .q-item__section--main{
+                    .q-item__label{
+                        color: $secondary;
+                        font-family: $fontFamiyBold;
+                    }
+                }
+                @media all and (max-width:991px){
+                    .q-item__section{
+                        .q-img{
+                            .q-img__container{
+                                img{
+                                    filter: initial !important;
+                                    opacity: 1 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .q-item.q-item-type{
+            padding: 15px 0;
+            @media all and (max-width:991px){
+                padding: 0px;
+                display: grid;
+                width: 100%;
+                justify-content: center;
+                -webkit-justify-content: center;
+                .q-item__section{
+                    margin: 0px auto;
+                    padding-right: 0px;
+                    .q-img{
+                        div:first-child{
+                            padding-bottom: 37px !important; 
+                        }
+                        .q-img__container{
+                            justify-content: center;
+                            -webkit-justify-content: center;
+                            img{
+                                filter: invert(100);
+                                opacity: 0.2;
+                            }
+                        }
+                    }
+                }
+                .q-item__section--main{
+                    .q-item__label{
+                        color: $font4;
+                        font-family: $fontFamiyBold;
+                    }
+                }
+            }
+            &:hover .q-focus-helper {
+                background: transparent;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.home-page__topbar{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+    margin-bottom: 30px;
+    @media all and (max-width:991px){
+        padding: 20px;
+        position: fixed;
+        top: 0 !important;
+        right: 0!important;
+        left: 0!important;
+        margin: 0px;
+    }
+
+    .balance{
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        margin: 0px;   
+        h6{
+            margin: 0;
+            width: 100%;
+            display: block;
+            font-size: 14px;
+            color: #222222;
+            @media all and (max-width:991px){
+                color: $fontLight;
+            }
+        }
+        .subheaading{
+            margin: 0px;
+            display: flex;
+            display: -webkit-flex;
+            @media all and (max-width:991px){
+                align-items: center;
+                -webkit-align-items: center;
+            }
+            span{
+                background-color: $secondary;
+                display: block;
+                color: $fontLight;
+                font-size: 13px;
+                line-height: 27px;
+                padding: 3px 10px;
+                border-radius: 5px;
+                @media all and (max-width:991px){
+                    padding: 1px 10px;
+                }
+            }
+            h2{
+                margin: 0px;
+                font-size: 30px;
+                font-family: $fontFamiyBold;
+                margin-left: 15px;
+                line-height: 34px;
+                @media all and (max-width:991px){
+                    color: $fontLight;
+                }
+            }
+        }
+    }
+    .new-card{
+        margin: 0px;
+        .m-logo{
+            display: none;
+            @media all and (max-width:991px){
+                display: block;
+                text-align: right;
+                margin-bottom: 10px;
+                .q-img{
+                    max-width: 30px;
+                }
+            }
+        }
+        button {
+            width: 109px;
+            height: 35px;
+            display: flex;
+            display: -webkit-flex;
+            @include justify-align-center;
+            border-radius: 5px;
+            background: $font3;
+            border: none;
+            color: $fontLight;
+            font-family: $fontFamiyBold;
+            @media all and (max-width:991px){
+                background: transparent;
+                color:  $tabbar;
+                padding: 0px;
+                width: auto;
+                height: auto;
+            }
+            i{
+                margin-right: 5px;
+                @media all and (max-width:991px){
+                    color:  $tabbar;
+                }
+            }
+        }
+    }
+}
+
+.home-page__body{
+    @media all and (max-width:991px){
+        margin-top: 467px;
+    }
+    .q-tabs{
+        @media all and (max-width:991px){
+            position: fixed;
+            top: 110px;
+            padding: 0 20px;
+            right: 0;
+            left: 0;
+            margin: 0px;
+        }
+    }
+    .credit-sliders {
+        @media all and (max-width:991px){
+            position: fixed;
+            top: 170px;
+            left: 0;
+            right: 0;
+            .q-carousel{
+                background: transparent;
+                height: 290px!important;
+            }
+        }
+    }
+    .q-tab-panels{
+        @media all and (max-width:991px){
+            background: transparent !important;
+        }
+    }
+    .q-tab-panel{
+        @media all and (max-width:991px){
+            padding: 0px;
+            .q-pa-md{
+                padding: 0px;
+            }
+        }
+    }
+    .tabs-nav-list{
+        margin-bottom: 20px;
+        .q-tab--inactive{
+            opacity: 0.3    ;
+        }
+        .q-tab.relative-position {
+            padding: 0;
+            margin-right: 35px;
+            @media all and (max-width:991px){
+                margin-right: 25px;
+            }
+            .q-focus-helper{
+                background:transparent;
+            }
+            .q-tab__content{
+                .q-tab__label{
+                    text-transform: initial;
+                    font-family: $fontFamiySemiBold;
+                    @media all and (max-width:991px){
+                        color: $fontLight;
+                    }
+                }
+            }
+            .q-tab__indicator{
+                background-color: $info;
+            }
+        }
+    }
+    .left_part_view{
+        @media all and (max-width:991px){
+            background-color: transparent;
+        }
+        .q-carousel__slide {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 0px;
+            @media all and (max-width:991px){
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+            .show-number {
+                display: flex;
+                justify-content: flex-end;
+                display: -webkit-flex;
+                -webkit-justify-content: flex-end;  
+                    button{
+                        background: transparent;
+                        border: none;
+                        font-size: 14px;
+                        color: $secondary;
+                        margin-bottom: 13px;
+                        font-family: $fontFamiyBold;
+                        cursor: pointer;
+                        @media all and (max-width:991px){
+                            margin: 0 0 -7px 0;
+                            background: white;
+                            padding: 9px 10px 13px;
+                            border-radius: 5px 5px 0 0;
+                            font-family: $fontFamiySemiBold;
+
+                        }
+                    }
+            }
+        }
+        .q-carousel__control{
+            bottom: 30px;
+            .q-carousel__navigation-inner{
+                .q-btn{
+                    margin: 0px 3px;
+                    padding: 0px;
+                    min-height: initial;
+                    min-width: initial;
+                    .q-focus-helper{
+                        background: transparent;
+                    }
+                    span{
+                        display: block;
+                        line-height: 0px;
+                    }
+                    .q-btn__content{
+                        width: 23px;
+                        i{
+                            font-size: 16px;
+                            color: $secondary;
+                            opacity: 0.3;
+                            transition: 0.5s;
+                            -webkit-transition: 0.5s;
+                        }
+                    }
+                }
+                .q-btn.active_dot{
+                    .q-btn__content{
+                        i{
+                            opacity: 1;
+                            position: relative;
+                            color: transparent;
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                left: -7px;
+                                top: 3px;
+                                bottom: 3px;
+                                right: 0;
+                                background: $secondary;
+                                width: 28px;
+                                transition: 0.5s;
+                                -webkit-transition: 0.5s;
+                                height: initial;
+                                border-radius: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .additional_buttons{
+            padding-right: 15px;
+            margin-top: 15px;
+            @media all and (max-width:991px){
+                margin: 0 !important;
+                padding: 0 !important;
+                position: relative;
+                border-radius: 30px 30px 0 0 !important;
+            }
+            .additional_inside{
+                padding-right: 0;
+                background: $lightbg;
+                border-radius: 8px;
+                display: flex;
+                justify-content: space-around;
+                display: -webkit-flex;
+                -webkit-justify-content: space-around;
+                align-items: flex-start;
+                -webkit-align-items: flex-start;
+                .btn.btn-custom{
+                    width: 100%;
+                    max-width: 70px;
+                    background: transparent;
+                    border: none;
+                    padding: 20px 0;
+                    .q-img {
+                        max-width: 36px;
+                        display: block;
+                        margin: 0 auto 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Home page right section accordians
+
+.right_part_view{ 
+    margin-top: 37px;
+    @media all and (max-width:991px){
+        padding: 20px;
+        background: white;
+        position: relative;
+        margin: 0;
+        min-height: 80vh;
+    }
+    .q-list {
+        padding: 0;
+        border: none;
+        .q-separator{
+            display: none;
+        }
+        .q-expansion-item{
+            margin-bottom: 15px;
+            .q-expansion-item__container{
+                .q-item{
+                    padding: 13px;
+                    border-radius: 5px;
+                    background-color: $lightbg;
+                    color: $primary;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                    @media all and (max-width:991px){
+                        padding: 10px;
+                    }
+                    .q-focus-helper{
+                        display: none;
+                    }
+                    .q-img{
+                        max-width: 27px;
+                        margin: 9px;
+                    }
+                    .q-icon{
+                        background: #ced9ed;
+                        border-radius: 100px;
+                        color: white;
+                    }
+                }
+                .q-expansion-item__content{
+                    border: 1px solid #F0F0F0;
+                    @media all and (max-width:991px){
+                        margin-bottom: 60px;
+                    }
+                    .all_transactions{
+                        padding: 15px;
+                        .transactions_lists:last-child{
+                            border:none;
+                            margin: 0px;
+                            padding-bottom: 10px;
+                        }
+                        .transactions_lists{
+                            display:flex;
+                            display:-webkit-flex;
+                            align-items: flex-start;
+                            -webkit-align-items: flex-start;
+                            justify-content: space-between;
+                            -webkit-justify-content: space-between;
+                            border-bottom: 1px solid $lightbg;
+                            padding-bottom: 20px;
+                            margin-bottom: 20px;
+                            
+                            .primary{
+                                span{
+                                    background-color: #009DFF1A !important;
+                                }
+                            }
+                            .success{
+                                span{
+                                    background-color: #00D6B51A !important;
+                                }
+                            }
+                            .danger{
+                                span{
+                                    background-color: #F251951A !important;
+                                }
+                            }
+                            .left{
+                                width: 20%;
+                                padding-right: 10px;
+                                span{
+                                    width: 50px;
+                                    height: 50px;
+                                    padding: 15px;
+                                    border-radius: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    display: -webkit-flex;
+                                    -webkit-justify-content: center;
+                                }
+                            }
+                            .center{
+                                width: 54%;
+                                h5{
+                                    margin: 0px;
+                                    font-size: 18px;
+                                    font-family: $fontFamiySemiBold;
+                                }
+                                p{
+                                    margin: 0px;
+                                    color: $font4;
+                                    font-size: 16px;
+                                }
+                                button{
+                                    background-color: transparent;
+                                    border: none;
+                                    color: $primary;
+                                    font-family: $fontFamiySemiBold;
+                                    font-size: 14px;
+                                    margin-top:10px;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    align-items: center;
+                                    -webkit-align-items: center;
+                                    padding: 0px;
+                                    cursor: pointer;
+                                    span{
+                                        background-color: $primary;
+                                        width: 33px;
+                                        padding: 8px;
+                                        border-radius: 100px;
+                                        display: flex;
+                                        display: -webkit-flex;
+                                        @include justify-align-center;
+                                        margin-right: 9px;
+                                        .q-img{
+                                            max-width: 14px;
+                                            line-height: 0px;
+                                        }
+                                    }
+                                }
+                            }
+                            .right{
+                                width: 24%;
+                                display: flex;
+                                justify-content: flex-end;
+                                display: -webkit-flex;
+                                -webkit-justify-content: flex-end;
+                                button{
+                                    background-color: transparent;
+                                    border: none;
+                                    color: $secondary;
+                                    font-size: 14px;
+                                    padding: 0px;
+                                    font-family: $fontFamiySemiBold;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    align-items: center;
+                                    -webkit-align-items: center;
+                                    i{
+                                        margin-left: 5px;
+                                        color: $font4;
+                                        opacity: 0.5;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .all_transactions_data{
+                        button{
+                            background-color: #DDFFEC;
+                            width: 100%;
+                            color: $secondary;
+                            border: none;
+                            padding: 15px;
+                            cursor: pointer;
+                            font-family: $fontFamiySemiBold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.q-drawer-container{
+    @media all and (max-width:991px){
+        .q-drawer__opener,
+        .fullscreen.q-drawer__backdrop{
+            display: none;
+        }
+    }
+}
